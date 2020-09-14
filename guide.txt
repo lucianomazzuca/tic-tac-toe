@@ -1,0 +1,4 @@
+Fill gameboard with array values:
+Cache squares
+for 0 to square.length
+    square[0] = array[0]
