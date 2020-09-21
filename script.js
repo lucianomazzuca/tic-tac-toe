@@ -42,7 +42,9 @@ const gameboard = (function(){
     }
 
     return{
-        showBoard: showBoard
+        showBoard: showBoard,
+        render,
+        reset
     }
 
 })();
@@ -78,9 +80,7 @@ const game = (function(){
             (board[0] === board[4] && board[4] === board[8] && board[8] === 'X') ||
             (board[2] === board[4] && board[4] === board[6] && board[6] === 'X')
             ){
-                displayWinner('Player 1')
-                gameboard.reset();
-                currentTurn = 'p1';
+                endGame('Player 1')
             }
             else if(
                 (board[0] === board[1] && board[1] === board[2] && board[2] === 'O') ||
@@ -92,10 +92,14 @@ const game = (function(){
                 (board[0] === board[4] && board[4] === board[8] && board[8] === 'O') ||
                 (board[2] === board[4] && board[4] === board[6] && board[6] === 'O')
                 ){
-                    displayWinner('Player 2')
-                    gameboard.reset();
-                    currentTurn = 'p1';
+                    endGame('Player 2')
                 }
+    }
+    const endGame = function(winner){
+        gameboard.reset();
+        gameboard.render();
+        displayWinner(winner)
+        currentTurn = 'p1';
     }
 
     return{
