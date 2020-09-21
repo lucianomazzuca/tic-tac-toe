@@ -2,3 +2,17 @@ Fill gameboard with array values:
 Cache squares
 for 0 to square.length
     square[0] = array[0]
+
+Game Logic:
+current turn = player1 || player2
+
+if turn = ''
+    player1 turn, addCross
+else if turn == player1 
+    player1 turn, addCross
+else player2 turn, addCircle
+
+Check which player won:
+    Three in a row
+    One every three positions
+    position 0 , 4, 8

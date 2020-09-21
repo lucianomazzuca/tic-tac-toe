@@ -40,3 +40,11 @@ h1{
 .square:hover{
     background-color: rgb(224, 224, 224);
 }
+
+.display{
+    margin-top: 20px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
